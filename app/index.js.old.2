@@ -1,0 +1,35 @@
+/**
+* @Author: shenyu <SamMFFL>
+* @Date:   2016/08/30 21:23:23
+* @Email:  shenyu902@pingan.com.cn
+* @Last modified by:   SamMFFL
+* @Last modified time: 2016/08/30 21:23:26
+*/
+
+
+import React, { Component } from 'react';
+import ReactDOM, { render as Render } from 'react-dom';
+import Child from './components/child.js'
+
+class HomePage extends Component {
+    constructor(props){
+        super();
+        this.state = {
+            checked_1: props.checked_1,
+            checked_2: props.checked_2
+        }
+    }
+    render(){
+        return (
+            <div>
+                <Child checked={this.state.checked_1}   />
+                <Child checked={this.state.checked_2}   />
+            </div>
+        )
+    }
+}
+
+Render(
+    <HomePage checked_1={false} checked_2={true} />,
+    document.getElementById('content')
+)
